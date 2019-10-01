@@ -9,11 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
-    @IBOutlet weak var dice: UIImageView!
+
+    @IBOutlet weak var player1Score: UILabel!
+    @IBOutlet weak var player2Score: UILabel!
     
     @IBOutlet weak var label: UILabel!
+    
+    
+    var player1Score = 0
+    var player2Score = 0
+    var player1Points = 0
+    var player2Points = 0
     
     @IBOutlet weak var rollDice: UIButton!
     
@@ -23,13 +29,6 @@ class ViewController: UIViewController {
     var player2Points = 0
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    @IBAction func diceRolled(_ sender: Any) {
-        let min : UInt32 = 1
-        let max : UInt32 = 7
         let diceRolledNumber = arc4random_uniform(max - min)+min
         label.text = String("Rolled a \(diceRolledNumber)")
         switch diceRolledNumber{
@@ -42,6 +41,13 @@ class ViewController: UIViewController {
         default: dice.image = UIImage(named: "diceSide1")
             
         let continueGame = (player1Score<24)&&(player2Score<24)
+        while continueGame{
+            
+            }
+        }
+        default: dice.image = UIImage(named: "diceSide1")
+            
+    
         while continueGame{
             
             }
