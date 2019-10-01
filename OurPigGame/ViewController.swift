@@ -13,12 +13,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1Score: UILabel!
     @IBOutlet weak var stopRoll: UIButton!
     @IBOutlet weak var player2Score: UILabel!
+    
     @IBOutlet weak var label: UILabel!
     var player1 = 0
     var player2 = 0
     let winScore = 24
     var playerTurn = true
     @IBOutlet weak var rollDice: UIButton!
+    
+    var player1Score = 0
+    var player2Score = 0
+    var player1Points = 0
+    var player2Points = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
