@@ -11,21 +11,25 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var player1Score: UILabel!
+    @IBOutlet weak var stopRoll: UIButton!
     @IBOutlet weak var player2Score: UILabel!
     @IBOutlet weak var label: UILabel!
     var player1 = 0
     var player2 = 0
-    
+    let winScore = 24
+    var playerTurn = true
     @IBOutlet weak var rollDice: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func endTurn(_ sender: Any) {
+        playerTurn = !playerTurn
+    }
     @IBAction func diceRolled(_ sender: Any) {
         let min : UInt32 = 1
         let max : UInt32 = 7
-        var playerTurn = true
         var player1Temp = 0
         var player2Temp = 0
         
@@ -53,6 +57,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     
 }
 
