@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var player1Score: UILabel!
+    @IBOutlet weak var player2Score: UILabel!
     @IBOutlet weak var label: UILabel!
     var player1 = 0
     var player2 = 0
@@ -23,8 +25,33 @@ class ViewController: UIViewController {
     @IBAction func diceRolled(_ sender: Any) {
         let min : UInt32 = 1
         let max : UInt32 = 7
-        let randomNumber = arc4random_uniform(max - min)+min
-        label.text = String("Rolled a \(randomNumber)")
+        var playerTurn = true
+        var player1Temp = 0
+        var player2Temp = 0
+        
+        while playerTurn == true {
+            let randomNumber1 = Int(arc4random_uniform(max - min)+min)
+            label.text = String("Rolled a \(randomNumber1)")
+            player1Temp = player1Temp + randomNumber1
+            if randomNumber1 == 1 {
+                player1Temp = 0
+            }
+            player1 += player1Temp
+            player1Score.text = String("Player 1: \(player1)")
+            playerTurn = false
+        }
+        while playerTurn == false {
+            let randomNumber2 = Int(arc4random_uniform(max - min)+min)
+            label.text = String("Rolled a \(randomNumber2)")
+            player2Temp = player2Temp + randomNumber2
+            if randomNumber2 == 1 {
+                player2Temp = 0
+            }
+            player2 += player1Temp
+            player2Score.text = String("Player 2: \(player2)")
+            playerTurn = true
+        }
+        
     }
     
 }
