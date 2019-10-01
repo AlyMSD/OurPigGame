@@ -21,10 +21,7 @@ class ViewController: UIViewController {
     var playerTurn = true
     @IBOutlet weak var rollDice: UIButton!
     
-    var player1Score = 0
-    var player2Score = 0
-    var player1Points = 0
-    var player2Points = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
